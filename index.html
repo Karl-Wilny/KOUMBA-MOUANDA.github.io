@@ -6,6 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+        /* --- 1. MENU DES PROJETS --- */
+        #work .actions.stacked li { margin-bottom: 1.2rem; }
+
+        #work .actions.stacked a.button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 400;
+            transition: all 0.2s ease-in-out;
+            text-transform: none;
+            letter-spacing: 0.05em;
+            height: auto;
+            line-height: 1.5;
+        }
+
+        #work .actions.stacked a.button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateX(5px);
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* --- 2. DÉTAILS DES PAGES --- */
+        article ul { margin-top: 1rem; margin-bottom: 2rem; }
+        article ul li { margin-bottom: 0.8rem; color: rgba(255, 255, 255, 0.9); }
+
+        /* Règle pour souligner "Challenge" et "Solution" dans les projets */
+        article p b {
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding-bottom: 1px;
+            margin-right: 5px;
+        }
+
+        /* --- CORRECTION ICI : PAS DE SOULIGNEMENT DANS L'INTRO --- */
+        #intro p b {
+            border-bottom: none; /* Enlève le trait */
+            padding-bottom: 0;
+            color: #ffffff; /* Garde juste la couleur blanche pour ressortir */
+        }
+
+        /* Bouton Retour */
+        article .actions.back-btn {
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+            justify-content: center;
+        }
+        article .actions.back-btn li { padding: 0; }
+        article .actions.back-btn .button {
+            border-radius: 30px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            height: 3em;
+            line-height: 3em;
+            padding: 0 2em;
+        }
+        article .actions.back-btn .button:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+
+        @media screen and (max-width: 736px) {
+            #work .actions.stacked a.button { flex-direction: column; text-align: center; font-size: 0.9rem; }
+            .menu-icon { margin-right: 0; margin-bottom: 0.5rem; }
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -57,81 +136,127 @@
                 </ul>
             </article>
 
-           <article id="work">
-    <h2 class="major">Mes Réalisations</h2>
+            <article id="work">
+                <h2 class="major">Mes Réalisations</h2>
+                <p>Découvrez mes projets détaillés ci-dessous :</p>
+                
+                <ul class="actions stacked">
+                    <li>
+                        <a href="#bi" class="button fit">
+                            <span class="menu-icon">📊</span>
+                            <span><b>Business Intelligence & Data</b><br><small>Power BI, ETL, Supply Chain</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#finance" class="button fit">
+                            <span class="menu-icon">💰</span>
+                            <span><b>Finance Stratégique</b><br><small>Modélisation, Business Plan, Risques</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#azure" class="button fit">
+                            <span class="menu-icon">☁️</span>
+                            <span><b>Cloud Azure & FinOps</b><br><small>Infrastructure, Sécurité, Réseaux</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tech" class="button fit">
+                            <span class="menu-icon">💻</span>
+                            <span><b>Tech Fullstack</b><br><small>Web App, SQL, Architecture</small></span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
 
-    <h3 id="finance">1. Finance Stratégique : Cas European Airlines</h3>
-    <span class="image main"><img src="images/projet_finance1.png" alt="Graphique Rentabilité VAN" /></span>
-    
-    <p><b>Le Challenge :</b> Valider la viabilité économique d'un investissement de 75 M€ (Airbus A320) pour la ligne Paris-Berlin et structurer son financement.</p>
-    <p><b>Ma Solution :</b> Développement d'un modèle financier complet sur Excel.</p>
-    <ul>
-        <li><b>Business Plan :</b> Projection des Cash Flows sur 5 ans et calcul du BFR.</li>
-        <li><b>KPIs :</b> Rentabilité validée (VAN : 21,9 M€, TRI : 23,74%) comme le montre la courbe ci-dessus.</li>
-    </ul>
+            <article id="bi">
+                <h2 class="major">Business Intelligence</h2>
+                <span class="image main"><img src="images/projet_bi_main.JPG" alt="Dashboard Power BI Synthèse" /></span>
+                
+                <p><b>Le Challenge :</b> Optimiser la Supply Chain d'un acteur E-commerce international en centralisant des données hétérogènes (ERP, CSV) pour réduire les coûts.</p>
+                <p><b>Ma Solution :</b> Conception d'un tableau de bord décisionnel complet sous <b>Power BI</b>.</p>
+                <ul>
+                    <li><b>Data Engineering :</b> Nettoyage et modélisation en étoile via Power Query pour lier commandes et entrepôts.</li>
+                    <li><b>KPIs Stratégiques :</b> Suivi en temps réel du Chiffre d'Affaires et des délais moyens de livraison (voir ci-dessus).</li>
+                </ul>
 
-    <span class="image main"><img src="images/projet_finance.png" alt="Structure du Financement" /></span>
+                <span class="image main"><img src="images/projet_bi_map.JPG" alt="Analyse Géographique Power BI" /></span>
 
-    <ul>
-        <li><b>Ingénierie de la Dette :</b> Structuration d'un financement mixte (Dette/Equity) pour optimiser l'effet de levier (voir répartition ci-dessus).</li>
-        <li><b>Risk Management :</b> Stress-test du modèle face à une crise de demande (-20% de trafic).</li>
-    </ul>
-    
-    <hr />
+                <ul>
+                    <li><b>Analytique Avancée (DAX) :</b> Calcul dynamique des coûts logistiques par zone géographique (Carte) et par mode de transport.</li>
+                    <li><b>Résultat :</b> Identification des zones de surcoût et optimisation des stocks pour réduire les ruptures.</li>
+                </ul>
+                
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
 
-    <h3 id="bi">2. Business Intelligence : Pilotage Logistique</h3>
-    <span class="image main"><img src="images/projet_bi_main.JPG" alt="Dashboard Power BI Synthèse" /></span>
-    
-    <p><b>Le Challenge :</b> Optimiser la Supply Chain d'un acteur E-commerce international en centralisant des données hétérogènes (ERP, CSV) pour réduire les coûts.</p>
-    <p><b>Ma Solution :</b> Conception d'un tableau de bord décisionnel complet sous <b>Power BI</b>.</p>
-    <ul>
-        <li><b>Data Engineering :</b> Nettoyage et modélisation en étoile via Power Query pour lier commandes et entrepôts.</li>
-        <li><b>KPIs Stratégiques :</b> Suivi en temps réel du Chiffre d'Affaires et des délais moyens de livraison (voir ci-dessus).</li>
-    </ul>
+            <article id="finance">
+                <h2 class="major">Finance Stratégique</h2>
+                <span class="image main"><img src="images/projet_finance1.png" alt="Graphique Rentabilité VAN" /></span>
+                
+                <p><b>Le Challenge :</b> Valider la viabilité économique d'un investissement de 75 M€ (Airbus A320) pour la ligne Paris-Berlin et structurer son financement.</p>
+                <p><b>Ma Solution :</b> Développement d'un modèle financier complet sur Excel.</p>
+                <ul>
+                    <li><b>Business Plan :</b> Projection des Cash Flows sur 5 ans et calcul du BFR.</li>
+                    <li><b>KPIs :</b> Rentabilité validée (VAN : 21,9 M€, TRI : 23,74%) comme le montre la courbe ci-dessus.</li>
+                </ul>
 
-    <span class="image main"><img src="images/projet_bi_map.JPG" alt="Analyse Géographique Power BI" /></span>
+                <span class="image main"><img src="images/projet_finance.png" alt="Structure du Financement" /></span>
 
-    <ul>
-        <li><b>Analytique Avancée (DAX) :</b> Calcul dynamique des coûts logistiques par zone géographique (Carte) et par mode de transport.</li>
-        <li><b>Résultat :</b> Identification des zones de surcoût et optimisation des stocks pour réduire les ruptures.</li>
-    </ul>
-    
-    <hr />
+                <ul>
+                    <li><b>Ingénierie de la Dette :</b> Structuration d'un financement mixte (Dette/Equity) pour optimiser l'effet de levier (voir répartition ci-dessus).</li>
+                    <li><b>Risk Management :</b> Stress-test du modèle face à une crise de demande (-20% de trafic).</li>
+                </ul>
 
-    <h3 id="tech">3. Tech Fullstack : Plateforme Train Booking</h3>
-    <span class="image main"><img src="images/projet_web.JPG" alt="Site Web Train Booking Accueil" /></span>
-    
-    <p><b>Le Challenge :</b> Digitaliser le processus de réservation ferroviaire via une interface intuitive et sécurisée.</p>
-    <p><b>Ma Solution :</b> Pilotage Agile et développement d'une application web.</p>
-    <ul>
-        <li><b>Architecture :</b> Frontend React.js et Backend PHP/Node.js.</li>
-        <li><b>Sécurité :</b> Authentification utilisateur et sécurisation des transactions.</li>
-    </ul>
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
 
-    <span class="image main"><img src="images/projet_web_db.JPG" alt="Schéma Base de Données MySQL" /></span>
+            <article id="azure">
+                <h2 class="major">Cloud Azure & FinOps</h2>
+                <span class="image main"><img src="images/projet_azure_couts.JPG" alt="Analyse des coûts Azure" /></span>
+                
+                <p><b>Le Challenge :</b> Déployer une infrastructure Cloud sécurisée et redondante (Multi-régions) tout en maîtrisant les coûts opérationnels (OPEX).</p>
+                <p><b>Ma Solution :</b> Mise en œuvre d'une architecture IaaS sous <b>Microsoft Azure</b>.</p>
+                <ul>
+                    <li><b>Architecture Réseau :</b> Création de VNet, sous-réseaux et Peering international (Europe/USA).</li>
+                    <li><b>Sécurité :</b> Gestion des identités (IAM), Bastion et configuration des NSG (Pare-feu).</li>
+                </ul>
 
-    <ul>
-        <li><b>Architecture de Données :</b> Conception et implémentation d’un schéma relationnel normalisé sous MySQL, garantissant l’intégrité référentielle des transactions complexes (Réservations/Trajets).</li>
-    </ul>
-    
-    <hr />
+                <span class="image main"><img src="images/projet_azure_pie.JPG" alt="Répartition des coûts par ressource" /></span>
 
-    <h3 id="azure">4. Cloud Computing & FinOps : Architecture Azure</h3>
-    <span class="image main"><img src="images/projet_azure_couts.JPG" alt="Analyse des coûts Azure" /></span>
-    
-    <p><b>Le Challenge :</b> Déployer une infrastructure Cloud sécurisée et redondante (Multi-régions) tout en maîtrisant les coûts opérationnels (OPEX).</p>
-    <p><b>Ma Solution :</b> Mise en œuvre d'une architecture IaaS sous <b>Microsoft Azure</b>.</p>
-    <ul>
-        <li><b>Architecture Réseau :</b> Création de VNet, sous-réseaux et Peering international (Europe/USA).</li>
-        <li><b>Sécurité :</b> Gestion des identités (IAM), Bastion et configuration des NSG (Pare-feu).</li>
-    </ul>
+                <ul>
+                    <li><b>Approche FinOps :</b> Monitoring et analyse précise de la consommation (voir répartition Compute vs Stockage ci-dessus) pour optimiser le budget.</li>
+                </ul>
 
-    <span class="image main"><img src="images/projet_azure_pie.JPG" alt="Répartition des coûts par ressource" /></span>
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
 
-    <ul>
-        <li><b>Approche FinOps :</b> Monitoring et analyse précise de la consommation (voir répartition Compute vs Stockage ci-dessus) pour optimiser le budget.</li>
-    </ul> 
-</article>
+            <article id="tech">
+                <h2 class="major">Tech Fullstack</h2>
+                <span class="image main"><img src="images/projet_web.JPG" alt="Site Web Train Booking Accueil" /></span>
+                
+                <p><b>Le Challenge :</b> Digitaliser le processus de réservation ferroviaire via une interface intuitive et sécurisée.</p>
+                <p><b>Ma Solution :</b> Pilotage Agile et développement d'une application web.</p>
+                <ul>
+                    <li><b>Architecture :</b> Frontend React.js et Backend PHP/Node.js.</li>
+                    <li><b>Sécurité :</b> Authentification utilisateur et sécurisation des transactions.</li>
+                </ul>
+
+                <span class="image main"><img src="images/projet_web_db.JPG" alt="Schéma Base de Données MySQL" /></span>
+
+                <ul>
+                    <li><b>Architecture de Données :</b> Conception et implémentation d’un schéma relationnel normalisé sous MySQL, garantissant l’intégrité référentielle des transactions complexes (Réservations/Trajets).</li>
+                </ul>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
 
             <article id="about">
                 <h2 class="major">Mon Expertise</h2>
