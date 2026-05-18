@@ -1,11 +1,272 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 <head>
     <title>Portfolio - Karl Wilny KOUMBA MOUANDA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio de Karl Wilny KOUMBA MOUANDA, ingénieur SI et Ingénierie Financière, disponible en stage dès mai 2026. Projets MOA, Power BI, Python, AML, Finance, Cloud Azure." />
+    <meta name="keywords" content="MOA, Consultant SI, Business Analyst, Power BI, Python, AML, Risk Scoring, ETL, Finance, ECAM-EPMI, stage 2026" />
+    <meta name="author" content="Karl Wilny KOUMBA MOUANDA" />
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+        /* ── MENU DES PROJETS ───────────────────────────────── */
+        #work .actions.stacked li { margin-bottom: 1.2rem; }
+
+        #work .actions.stacked a.button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 400;
+            transition: all 0.2s ease-in-out;
+            text-transform: none;
+            letter-spacing: 0.05em;
+            height: auto;
+            line-height: 1.5;
+        }
+
+        #work .actions.stacked a.button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateX(5px);
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* ── DÉTAILS DES PAGES ──────────────────────────────── */
+        article ul { margin-top: 1rem; margin-bottom: 2rem; }
+        article ul li { margin-bottom: 0.8rem; color: rgba(255, 255, 255, 0.9); }
+
+        article p b {
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding-bottom: 1px;
+            margin-right: 5px;
+        }
+
+        #intro p b {
+            border-bottom: none;
+            padding-bottom: 0;
+            color: #ffffff;
+        }
+
+        article h3 {
+            margin-top: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article .actions.back-btn {
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+            justify-content: center;
+        }
+        article .actions.back-btn li { padding: 0; }
+        article .actions.back-btn .button {
+            border-radius: 30px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            height: 3em;
+            line-height: 3em;
+            padding: 0 2em;
+        }
+        article .actions.back-btn .button:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+
+        /* ── KPI CARDS ──────────────────────────────────────── */
+        .kpi-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .kpi-card {
+            flex: 1;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-align: center;
+        }
+
+        .kpi-card .kpi-value {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .kpi-card .kpi-value.accent { color: #72d4f0; }
+        .kpi-card .kpi-value.green  { color: #6fcf97; }
+        .kpi-card .kpi-value.gold   { color: #f4c86a; }
+        .kpi-card .kpi-value.red    { color: #f47a6a; }
+
+        .kpi-card .kpi-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── INSIGHT BOX ────────────────────────────────────── */
+        .insight-box {
+            background: rgba(255, 255, 255, 0.04);
+            border-left: 3px solid rgba(255, 255, 255, 0.35);
+            border-radius: 0 6px 6px 0;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .insight-box strong {
+            font-style: normal;
+            color: #ffffff;
+        }
+
+        /* ── PROJECT SUBTITLE ───────────────────────────────── */
+        .project-subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-top: -1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── SÉPARATEUR INTERNE ─────────────────────────────── */
+        .section-divider {
+            border: none;
+            border-top: 1px dashed rgba(255,255,255,0.3);
+            margin: 3rem 0;
+        }
+
+        /* ── BADGE STACK TECHNIQUE ──────────────────────────── */
+        .stack-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.2rem 0 1.8rem 0;
+        }
+        .stack-badge {
+            display: inline-block;
+            background: rgba(114, 212, 240, 0.1);
+            border: 1px solid rgba(114, 212, 240, 0.35);
+            color: #72d4f0;
+            border-radius: 4px;
+            padding: 0.2rem 0.65rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ── BARRE DE RISQUE ────────────────────────────────── */
+        .risk-bar-table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+        .risk-bar-table td {
+            padding: 0.45rem 0.6rem;
+            vertical-align: middle;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            border: none;
+        }
+        .risk-bar-table .risk-label { width: 110px; font-weight: 600; white-space: nowrap; }
+        .risk-bar-table .risk-count { width: 60px; text-align: right; color: #ffffff; font-weight: 700; }
+        .risk-bar-table .risk-pct   { width: 55px; text-align: right; color: rgba(255,255,255,0.45); font-size: 0.78rem; }
+        .risk-bar-wrap { background: rgba(255,255,255,0.08); border-radius: 3px; height: 8px; overflow: hidden; }
+        .risk-bar-fill { height: 8px; border-radius: 3px; }
+        .risk-critique { background: #f47a6a; }
+        .risk-eleve    { background: #f4c86a; }
+        .risk-modere   { background: #72d4f0; }
+        .risk-faible   { background: #6fcf97; }
+
+        /* ── LIEN GITHUB PROJET ─────────────────────────────── */
+        .github-link-box {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            padding: 0.85rem 1.2rem;
+            margin: 1.5rem 0;
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .github-link-box:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        .github-link-box .gh-icon { font-size: 1.3rem; }
+        .github-link-box .gh-url { font-size: 0.75rem; color: rgba(255,255,255,0.4); display: block; }
+
+        /* ── SECTION #about ─────────────────────────────────── */
+        #about ul li b { border-bottom: none !important; color: #ffffff; }
+
+        .tech-stack { text-align: center; margin-bottom: 2rem; line-height: 2.8em; }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 4px;
+            padding: 0.25rem 0.75rem;
+            margin: 0.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .tag:hover {
+            background: #ffffff;
+            color: #272833;
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+        }
+
+        h3 .icon { margin-right: 12px; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; }
+
+        /* ── RESPONSIVE ─────────────────────────────────────── */
+        @media screen and (max-width: 736px) {
+            #work .actions.stacked a.button { flex-direction: column; text-align: center; font-size: 0.9rem; }
+            .menu-icon { margin-right: 0; margin-bottom: 0.5rem; }
+            .kpi-row { flex-direction: column; }
+            .risk-bar-table .risk-label { width: 80px; }
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -34,15 +295,16 @@
 
         <div id="main">
 
+            <!-- INTRO -->
             <article id="intro">
                 <h2 class="major">À propos de moi</h2>
                 <span class="image main"><img src="images/avatar.jpg" alt="Karl Wilny KOUMBA MOUANDA" style="object-position: center 30%;" /></span>
-                
+
                 <p>Futur ingénieur diplômé de l'<b>ECAM-EPMI</b>, je suis spécialisé en <b>Management des Systèmes d'Information (MSI) et Ingénierie Financière</b>. Ce double cursus me permet de maîtriser à la fois les enjeux stratégiques de la finance et les leviers technologiques pour les résoudre.</p>
-                
-                <p>De la <b>modélisation financière</b> (Cash Flows, VAN) à l'<b>architecture Cloud</b> (Azure) en passant par la <b>Business Intelligence</b> (Power BI), j'ai développé une approche "Data-Driven" pour optimiser la prise de décision et sécuriser les processus bancaires et industriels.</p>
-                
-                <p>Je suis à la recherche d'un <b>stage de fin d'études de 6 mois</b>, avec un démarrage flexible entre <b>Février et Avril 2026</b>. Prêt à m'investir au sein de vos équipes en tant que :</p>
+
+                <p>De la <b>modélisation financière</b> (Cash Flows, VAN) à l'<b>architecture Cloud</b> (Azure) en passant par la <b>Business Intelligence</b> (Power BI, Excel Power Pivot), j'ai développé une approche "Data-Driven" pour optimiser la prise de décision et sécuriser les processus bancaires et industriels.</p>
+
+                <p>Je suis à la recherche d'un <b>stage de fin d'études de 6 mois</b>, disponible <b>dès mai 2026.</b> Prêt à m'investir au sein de vos équipes en tant que :</p>
                 <ul>
                     <li><b>Consultant SI / MOA</b> (Banque & Assurance)</li>
                     <li><b>Business Analyst Finance</b></li>
@@ -52,121 +314,726 @@
                 </ul>
 
                 <ul class="actions">
-                    <li><a href="CV-Karl Wilny KOUMBA MOUANDA.pdf" class="button primary icon solid fa-download" target="_blank">Télécharger mon CV</a></li>
+                    <li><a href="CV-Karl-Wilny-KOUMBA-MOUANDA.pdf" class="button primary icon solid fa-download" target="_blank">Télécharger mon CV</a></li>
                     <li><a href="#work" class="button">Voir mes réalisations</a></li>
                 </ul>
             </article>
 
-           <article id="work">
-    <h2 class="major">Mes Réalisations</h2>
+            <!-- MENU -->
+            <article id="work">
+                <h2 class="major">Mes Réalisations</h2>
+                <p>Découvrez mes projets détaillés ci-dessous :</p>
 
-    <h3 id="finance">1. Finance Stratégique : Cas European Airlines</h3>
-    <span class="image main"><img src="images/projet_finance1.png" alt="Graphique Rentabilité VAN" /></span>
-    
-    <p><b>Le Challenge :</b> Valider la viabilité économique d'un investissement de 75 M€ (Airbus A320) pour la ligne Paris-Berlin et structurer son financement.</p>
-    <p><b>Ma Solution :</b> Développement d'un modèle financier complet sur Excel.</p>
-    <ul>
-        <li><b>Business Plan :</b> Projection des Cash Flows sur 5 ans et calcul du BFR.</li>
-        <li><b>KPIs :</b> Rentabilité validée (VAN : 21,9 M€, TRI : 23,74%) comme le montre la courbe ci-dessus.</li>
-    </ul>
-
-    <span class="image main"><img src="images/projet_finance.png" alt="Structure du Financement" /></span>
-
-    <ul>
-        <li><b>Ingénierie de la Dette :</b> Structuration d'un financement mixte (Dette/Equity) pour optimiser l'effet de levier (voir répartition ci-dessus).</li>
-        <li><b>Risk Management :</b> Stress-test du modèle face à une crise de demande (-20% de trafic).</li>
-    </ul>
-    
-    <hr />
-
-    <h3 id="bi">2. Business Intelligence : Pilotage Logistique</h3>
-    <span class="image main"><img src="images/projet_bi_main.JPG" alt="Dashboard Power BI Synthèse" /></span>
-    
-    <p><b>Le Challenge :</b> Optimiser la Supply Chain d'un acteur E-commerce international en centralisant des données hétérogènes (ERP, CSV) pour réduire les coûts.</p>
-    <p><b>Ma Solution :</b> Conception d'un tableau de bord décisionnel complet sous <b>Power BI</b>.</p>
-    <ul>
-        <li><b>Data Engineering :</b> Nettoyage et modélisation en étoile via Power Query pour lier commandes et entrepôts.</li>
-        <li><b>KPIs Stratégiques :</b> Suivi en temps réel du Chiffre d'Affaires et des délais moyens de livraison (voir ci-dessus).</li>
-    </ul>
-
-    <span class="image main"><img src="images/projet_bi_map.JPG" alt="Analyse Géographique Power BI" /></span>
-
-    <ul>
-        <li><b>Analytique Avancée (DAX) :</b> Calcul dynamique des coûts logistiques par zone géographique (Carte) et par mode de transport.</li>
-        <li><b>Résultat :</b> Identification des zones de surcoût et optimisation des stocks pour réduire les ruptures.</li>
-    </ul>
-    
-    <hr />
-
-    <h3 id="tech">3. Tech Fullstack : Plateforme Train Booking</h3>
-    <span class="image main"><img src="images/projet_web.JPG" alt="Site Web Train Booking Accueil" /></span>
-    
-    <p><b>Le Challenge :</b> Digitaliser le processus de réservation ferroviaire via une interface intuitive et sécurisée.</p>
-    <p><b>Ma Solution :</b> Pilotage Agile et développement d'une application web.</p>
-    <ul>
-        <li><b>Architecture :</b> Frontend React.js et Backend PHP/Node.js.</li>
-        <li><b>Sécurité :</b> Authentification utilisateur et sécurisation des transactions.</li>
-    </ul>
-
-    <span class="image main"><img src="images/projet_web_db.JPG" alt="Schéma Base de Données MySQL" /></span>
-
-    <ul>
-        <li><b>Architecture de Données :</b> Conception et implémentation d’un schéma relationnel normalisé sous MySQL, garantissant l’intégrité référentielle des transactions complexes (Réservations/Trajets).</li>
-    </ul>
-    
-    <hr />
-
-    <h3 id="azure">4. Cloud Computing & FinOps : Architecture Azure</h3>
-    <span class="image main"><img src="images/projet_azure_couts.JPG" alt="Analyse des coûts Azure" /></span>
-    
-    <p><b>Le Challenge :</b> Déployer une infrastructure Cloud sécurisée et redondante (Multi-régions) tout en maîtrisant les coûts opérationnels (OPEX).</p>
-    <p><b>Ma Solution :</b> Mise en œuvre d'une architecture IaaS sous <b>Microsoft Azure</b>.</p>
-    <ul>
-        <li><b>Architecture Réseau :</b> Création de VNet, sous-réseaux et Peering international (Europe/USA).</li>
-        <li><b>Sécurité :</b> Gestion des identités (IAM), Bastion et configuration des NSG (Pare-feu).</li>
-    </ul>
-
-    <span class="image main"><img src="images/projet_azure_pie.JPG" alt="Répartition des coûts par ressource" /></span>
-
-    <ul>
-        <li><b>Approche FinOps :</b> Monitoring et analyse précise de la consommation (voir répartition Compute vs Stockage ci-dessus) pour optimiser le budget.</li>
-    </ul> 
-</article>
-
-            <article id="about">
-                <h2 class="major">Mon Expertise</h2>
-                <h3>1. Ingénierie Financière & BI</h3>
-                <p>Capacité à traduire des enjeux financiers en solutions techniques.</p>
-                <ul>
-                    <li><b>Finance de Marché & Corporate :</b> Valorisation d'entreprise, VAN/TRI, Gestion de portefeuille, Produits dérivés.</li>
-                    <li><b>Business Intelligence :</b> Création de Dashboards décisionnels (Power BI), Reporting financier.</li>
-                    <li><b>Actuariat :</b> Modélisation probabiliste et gestion des risques.</li>
-                </ul>
-
-                <h3>2. IT & Cybersécurité</h3>
-                <p>Solide bagage technique pour dialoguer avec les équipes de développement.</p>
-                <ul>
-                    <li><b>Cloud & Réseaux :</b> Déploiement Azure, Virtualisation (VMware, VirtualBox), Sécurité réseau (Bastion, SSH).</li>
-                    <li><b>Développement :</b> Python (Data), SQL (Bases de données), HTML/CSS/JS (Web), C/C++.</li>
-                    <li><b>Outils :</b> Excel Avancé, GMAO (Coswin), AutoCAD/Revit (BIM).</li>
-                </ul>
-
-                <h3>3. Gestion de Projet & Soft Skills</h3>
-                <p>Pilotage de projets complexes avec une approche méthodique.</p>
-                <ul>
-                    <li><b>Méthodes :</b> Agile / Scrum, Planification Gantt, ITIL.</li>
-                    <li><b>Savoir-être :</b> Esprit de synthèse, Communication inter-services (Tech/Métier), Adaptabilité.</li>
-                    <li><b>Langues :</b> Anglais (B1), Français (Maternel).</li>
+                <ul class="actions stacked">
+                    <li>
+                        <a href="#bi" class="button fit">
+                            <span class="menu-icon">📊</span>
+                            <span><b>Data & Business Intelligence</b><br><small>Power BI, Excel Power Pivot, ETL, Star Schema, DAX, ROAS, NPS</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#moa" class="button fit">
+                            <span class="menu-icon">🏦</span>
+                            <span><b>Transformation SI — MOA Bancaire</b><br><small>Pilotage budgétaire BRF Capital, migration Excel vers Power BI, gestion de projet bout en bout</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#aml" class="button fit">
+                            <span class="menu-icon">🔍</span>
+                            <span><b>Pipeline ETL & Monitoring AML</b><br><small>Python, SQLite, Risk Scoring, détection d'anomalies financières, GitHub</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#finance" class="button fit">
+                            <span class="menu-icon">💰</span>
+                            <span><b>Finance Stratégique</b><br><small>Asset Management & Corporate Finance</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#azure" class="button fit">
+                            <span class="menu-icon">☁️</span>
+                            <span><b>Cloud Azure & FinOps</b><br><small>Infrastructure IaaS, Sécurité, Réseaux</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tech" class="button fit">
+                            <span class="menu-icon">💻</span>
+                            <span><b>Tech Fullstack</b><br><small>Web App, SQL, Architecture Agile</small></span>
+                        </a>
+                    </li>
                 </ul>
             </article>
 
+            <!-- BI -->
+            <article id="bi">
+                <h2 class="major">Data & Business Intelligence</h2>
+                <p class="project-subtitle">Power BI Desktop · Excel Power Pivot · ETL · DAX Avancé</p>
+
+                <h3>Projet 1 : Supply Chain E-commerce</h3>
+                <p class="project-subtitle">Power BI Desktop · ETL, Star Schema, Analyse NPS</p>
+
+                <span class="image main"><img src="images/projet_bi_main.JPG" alt="Dashboard Power BI Synthèse" /></span>
+
+                <p><b>Le Challenge :</b> Optimiser la Supply Chain d'un acteur E-commerce international en centralisant des données hétérogènes (ERP, CSV) pour réduire les coûts et améliorer la satisfaction client.</p>
+                <p><b>Ma Solution :</b> Conception d'un système décisionnel complet, de l'ingestion brute à la visualisation, entièrement sous <b>Power BI Desktop</b>.</p>
+
+                <h3>1. Data Engineering & Modélisation</h3>
+                <span class="image main"><img src="images/projet_bi_annexe.JPG" alt="Schéma en étoile et Modélisation" /></span>
+                <ul>
+                    <li><b>Architecture (Star Schema) :</b> Conception d'un modèle en étoile reliant une table de faits centrale aux dimensions analytiques (Produits, Entrepôts, Clients). Ce choix garantit des performances de requêtes optimales et une lisibilité maximale du modèle pour toute l'équipe.</li>
+                    <li><b>ETL (Power Query) :</b> Nettoyage, transformation et standardisation des données sources hétérogènes. Aucune donnée corrompue ne remonte dans les rapports ; la fiabilité des indicateurs repose entièrement sur cette étape.</li>
+                </ul>
+
+                <h3>2. Analyse de la Performance Logistique</h3>
+                <span class="image main"><img src="images/projet_bi_map.JPG" alt="Analyse Géographique Power BI" /></span>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">Identifiés</span>
+                        <span class="kpi-label">Zones de surcoûts logistiques</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">Détectée</span>
+                        <span class="kpi-label">Surcapacité de stockage (coût du vide)</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><b>Cartographie dynamique :</b> La visualisation géographique a permis d'identifier immédiatement les zones où les coûts de transport dépassaient les seuils acceptables, information impossible à lire dans un tableau brut.</li>
+                    <li><b>Coût du vide :</b> L'analyse croisée stock/demande a mis en évidence une surcapacité de stockage sur certaines références, générant un coût fixe non compensé par les ventes. Recommandation : réduction du stock tampon sur ces SKUs et réallocation vers les références à forte rotation.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Insight :</strong> La cartographie a révélé que les surcoûts logistiques ne sont pas uniformément répartis ; ils se concentrent sur 2 régions précises, permettant une action chirurgicale plutôt qu'une refonte globale de la politique transport.
+                </div>
+
+                <h3>3. Satisfaction Client (NPS)</h3>
+                <span class="image main"><img src="images/projet_bi_nps.JPG" alt="Dashboard NPS Satisfaction" /></span>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value red">19 %</span>
+                        <span class="kpi-label">NPS · Taux critique détecté</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">Conformes</span>
+                        <span class="kpi-label">Délais de livraison</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><b>Paradoxe révélé :</b> Un NPS de <b>19%</b> est alarmant malgré des délais de livraison conformes aux engagements. Cela indique que la satisfaction est dégradée par un autre facteur, très probablement la qualité des produits reçus ou l'expérience de déballage.</li>
+                    <li><b>Décision data-driven :</b> Ce constat a permis de réorienter les investissements prévus pour l'accélération du transport vers le contrôle qualité amont, décision contre-intuitive rendue possible grâce à la granularité de l'analyse.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Sans ce dashboard, l'entreprise aurait continué d'investir dans la vitesse de livraison sans jamais résoudre la vraie cause de l'insatisfaction client. La BI a permis d'éviter une dépense inutile et de cibler le vrai levier de progression.
+                </div>
+
+                <hr class="section-divider" />
+
+                <h3>Projet 2 : Analyse Opérationnelle</h3>
+                <p class="project-subtitle">Microsoft Excel · Power Pivot, Logistique, KPI Commerciaux</p>
+
+                <span class="image main"><img src="images/bi_logistique_584k.JPG" alt="Tableau de Bord Performance Commerciale et Logistique" /></span>
+
+                <p><b>Le Challenge :</b> En pleine phase d'expansion, l'entreprise a atteint un Chiffre d'Affaires global de <b>584 480 €</b>. Cependant, les retours clients concernant les retards se multipliaient. Le défi était d'identifier précisément où la chaîne logistique perdait en efficacité malgré l'explosion des ventes de Smartphones et de Laptops.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">584 480 €</span>
+                        <span class="kpi-label">CA Global</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">86,40 %</span>
+                        <span class="kpi-label">Taux de succès livraisons</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value red">13,60 %</span>
+                        <span class="kpi-label">Taux d'échec · Signal d'alerte</span>
+                    </div>
+                </div>
+
+                <h3>1. Conception de l'Outil de Pilotage</h3>
+                <ul>
+                    <li><b>Outil :</b> Dashboard agile conçu sous <b>Microsoft Excel (Power Pivot)</b> pour corréler les flux de ventes et les performances de transport sur une période de 6 mois (janvier à juin).</li>
+                    <li><b>Analyse de flux :</b> Utilisation de segments (slicers) interactifs permettant un filtrage instantané par produit (Smartphone, Laptop, Clavier, Souris, Casque audio) et par région (Est, Ouest, IDF, Nord, Sud), sans aucune formule manuelle à recharger.</li>
+                    <li><b>Visualisations consolidées :</b> Évolution mensuelle du CA (pic à 120 090 € en mai), Top 5 produits, répartition régionale des ventes et taux de succès des livraisons dans une seule vue de pilotage.</li>
+                </ul>
+
+                <h3>2. L'Insight Décisif</h3>
+                <ul>
+                    <li><b>Signal masqué par la croissance :</b> Un taux de livraisons réussies de <b>86,40%</b> peut sembler correct au premier regard. Ramené au volume de commandes, il représente pourtant un nombre significatif de clients mécontents chaque mois, soit un risque réputationnel direct.</li>
+                    <li><b>Zones critiques identifiées :</b> En croisant les données ventes et livraisons, les régions Est et Ouest (22% du CA chacune) concentraient les retards les plus critiques, exposant <b>44% du CA total</b> à un risque de défaillance logistique.</li>
+                    <li><b>Paradoxe produit :</b> Les produits les plus vendus, Smartphone (265 unités) et Laptop (263 unités), subissaient le plus fort volume de retards. La croissance elle-même alimentait la friction : plus les ventes accéléraient, plus la logistique saturait.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Cette visibilité a permis à la direction de réallouer des ressources logistiques et de renforcer les stocks tampons dans les zones Est et Ouest, sécurisant la croissance du trimestre suivant sans augmentation du budget transport global.
+                </div>
+
+                <hr class="section-divider" />
+
+                <h3>Projet 3 : Rentabilité Marketing</h3>
+                <p class="project-subtitle">Power BI Desktop · DAX Avancé, ROAS, Performance Q1 2026</p>
+
+                <span class="image main"><img src="images/bi_schema.JPG" alt="Modèle de données Schéma en étoile Power BI" /></span>
+
+                <p><b>Le Challenge :</b> Avec un budget publicitaire de <b>~30K€</b> réparti sur plusieurs canaux (Google Ads, Facebook Ads, Emailing, Direct), l'entreprise naviguait à vue. Le sentiment général était positif, mais personne ne pouvait isoler la rentabilité réelle de chaque euro investi par canal d'acquisition.</p>
+
+                <h3>1. Modélisation Avancée des Données</h3>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">4 tables</span>
+                        <span class="kpi-label">Modèle en étoile (Star Schema)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">DAX</span>
+                        <span class="kpi-label">Table Calendrier générée en code</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">ISFILTERED</span>
+                        <span class="kpi-label">ROAS dynamique & fiable</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><b>Schéma en Étoile :</b> Le modèle relie une table de faits <code>Ventes</code> à trois dimensions : <code>Canaux</code>, <code>Marketing_Ads</code> et une table <code>Calendrier</code> centrale créée entièrement en DAX. Cette architecture garantit une intelligence temporelle parfaite (filtrage par jour, mois, trimestre, cumul annuel) sans redondance de données.</li>
+                    <li><b>ROAS Dynamique :</b> La mesure ROAS utilise les fonctions <code>ISFILTERED</code> et <code>BLANK</code> pour retourner un résultat vide, et non un chiffre trompeur, lorsque le contexte de filtrage est trop granulaire. C'est une décision de Data Integrity : un mauvais KPI affiché coûte plus cher qu'un KPI absent.</li>
+                </ul>
+
+                <h3>2. Analyse Multicanale & Arbitrage Budgétaire</h3>
+                <span class="image main"><img src="images/bi_roas_final.JPG" alt="Dashboard Performance Marketing Rentabilité Q1 2026" /></span>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">815,74 K€</span>
+                        <span class="kpi-label">CA Q1 Global</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">27,21</span>
+                        <span class="kpi-label">ROAS Global</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">29,98 K€</span>
+                        <span class="kpi-label">Budget Total Dépensé</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><b>Canal dominant :</b> Google Ads génère le CA le plus élevé (311K€ au global) avec seulement 16K€ investis, soit le meilleur rapport rendement/coût de tous les canaux. Ce résultat plaide pour une concentration du budget sur ce levier.</li>
+                    <li><b>Emailing sous-estimé :</b> Avec 180K€ de CA générés pour un budget parmi les plus faibles, l'Emailing affiche un ROAS implicite remarquable, canal à fort potentiel souvent négligé au profit des paid ads.</li>
+                    <li><b>Décision data-driven :</b> L'arbitrage budgétaire en temps réel a permis de réduire les dépenses sur les canaux moins performants au profit de Google Ads et de l'Emailing, propulsant le CA global à 815,74K€ sur le trimestre.</li>
+                </ul>
+
+                <h3>3. Analyse Granulaire par Filtrage Croisé</h3>
+                <span class="image main"><img src="images/bi_roas_final2.JPG" alt="Détail filtrage Février Laptop Power BI" /></span>
+                <ul>
+                    <li><b>Zoom Février × Laptop :</b> En isolant ce segment, le dashboard révèle 112,8K€ de CA générés avec seulement 6,87K€ de budget, performance exceptionnelle qui aurait été noyée dans les agrégats sans cette capacité de drill-down.</li>
+                    <li><b>ROAS affiché vide :</b> Sur ce filtre granulaire, le ROAS s'affiche intentionnellement vide grâce à la mesure <code>ISFILTERED</code>. Un calcul CA/Budget à ce niveau serait mathématiquement faux car les budgets ne sont pas attribués par produit dans la source. C'est la robustesse du modèle qui s'exprime.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Un ROAS global de <strong>27,21</strong> signifie que chaque euro investi en publicité a rapporté 27€ de chiffre d'affaires. Cette visibilité a transformé la gestion du budget marketing, passant d'une répartition intuitive à un pilotage par la donnée, trimestre après trimestre.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- MOA BRF CAPITAL -->
+            <article id="moa">
+                <h2 class="major">Transformation SI — MOA Bancaire</h2>
+                <p class="project-subtitle">BRF Capital · 850 M€ de budget · Migration Excel vers Power BI · Pilotage bout en bout</p>
+
+                <span class="image main"><img src="images/brf_schema_astobe.JPG" alt="Schéma AS-IS TO-BE Transformation SI BRF Capital" /></span>
+
+                <p><b>Le Challenge :</b> BRF Capital, banque régionale de <b>2 500 collaborateurs</b> gérant un budget de <b>850 M€</b>, consolidait manuellement <b>47 fichiers Excel</b> issus de 12 directions. Résultat : 72h de travail par mois pour produire un reporting entaché d'un taux d'erreur de <b>8,3%</b>, livré en J+5.</p>
+
+                <p><b>La Mission (rôle MOA) :</b> Piloter la transformation SI de bout en bout, de la cartographie des processus existants à la présentation COMEX, en produisant l'intégralité des livrables projet.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value red">72h/mois</span>
+                        <span class="kpi-label">Consolidation manuelle réduite à <b style="color:#6fcf97">4h</b></span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value red">8,3%</span>
+                        <span class="kpi-label">Taux d'erreur ramené à <b style="color:#6fcf97">&lt; 0,5%</b></span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">J+5 à J+1</span>
+                        <span class="kpi-label">Délai de reporting</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">+183%</span>
+                        <span class="kpi-label">ROI atteint en 18 mois</span>
+                    </div>
+                </div>
+
+                <h3>1. Cartographie AS-IS / TO-BE</h3>
+                <ul>
+                    <li><b>AS-IS :</b> Collecte manuelle de 47 fichiers Excel, 3 contrôleurs mobilisés, consolidation sans traçabilité, reporting PDF statique diffusé par email.</li>
+                    <li><b>TO-BE :</b> Connexion ETL automatique via Power Query et ERP/CSV, modélisation Star Schema, 23 KPIs calculés en DAX, dashboard Power BI interactif diffusé avec gestion des rôles sur 3 niveaux.</li>
+                    <li><b>Outil :</b> Schéma produit sous draw.io avec code couleur structuré : points de friction en rouge, processus optimisés en vert, investissement et ROI en orange.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Insight :</strong> Sans cette cartographie, le COMEX n'aurait pas eu de base chiffrée pour arbitrer entre statu quo et transformation. Le schéma a rendu visible ce que 47 fichiers Excel cachaient depuis des années.
+                </div>
+
+                <h3>2. Cahier des Charges Fonctionnel — 8 sections</h3>
+                <ul>
+                    <li><b>Périmètre fonctionnel :</b> Couverture des 12 directions, 47 sources de données, 2 500 utilisateurs segmentés en 4 profils d'accès : Contrôleur, Manager, DAF et COMEX.</li>
+                    <li><b>Exigences fonctionnelles :</b> Connexion ETL automatisée, actualisation quotidienne des données, 23 KPIs définis avec formule DAX, filtres croisés par direction, période et entité.</li>
+                    <li><b>Exigences non-fonctionnelles :</b> Temps de chargement inférieur à 3 secondes, disponibilité à 99,5%, traçabilité des accès, conformité RGPD sur les données RH.</li>
+                    <li><b>Matrice de traçabilité :</b> Chaque exigence numérotée est liée à un livrable technique, un responsable et un critère de recette.</li>
+                </ul>
+
+                <h3>3. Matrice des Risques — Heatmap 4×4</h3>
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">8</span>
+                        <span class="kpi-label">Risques identifiés</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value red">3</span>
+                        <span class="kpi-label">Risques critiques (score ≥ 9)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">185 K€</span>
+                        <span class="kpi-label">Budget total du projet</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><b>Risques critiques identifiés :</b> Résistance au changement des contrôleurs (P4 × I4 = score 16), qualité insuffisante des données sources (P3 × I4 = 12), dépassement budgétaire en phase de déploiement (P3 × I3 = 9).</li>
+                    <li><b>Plans de mitigation :</b> Programme de conduite du changement avec formations et ambassadeurs métier, audit qualité des données en amont du chargement ETL, réserve budgétaire de 10% sur le lot déploiement.</li>
+                    <li><b>Heatmap 4×4 :</b> Visualisation colorée Probabilité × Impact permettant une lecture immédiate des priorités de traitement pour le comité de pilotage.</li>
+                </ul>
+
+                <h3>4. Planning Projet — Gantt 24 semaines / 14 jalons</h3>
+                <ul>
+                    <li><b>6 phases :</b> Cadrage (S1 à S2), Analyse et Conception (S3 à S6), Développement ETL (S7 à S12), Modélisation Power BI (S13 à S16), Tests et Recette (S17 à S20), Déploiement et Formation (S21 à S24).</li>
+                    <li><b>14 jalons :</b> Validation CDC, livraison maquette, recette utilisateur, go-live, bilan ROI. Chaque jalon conditionne le passage à la phase suivante.</li>
+                    <li><b>Chemin critique identifié :</b> La phase ETL est le goulet d'étranglement. Plan de contingence : ressource ETL additionnelle activable en S8 si retard détecté.</li>
+                </ul>
+
+                <h3>5. Présentation COMEX — 10 slides</h3>
+                <ul>
+                    <li><b>Structure exécutive :</b> Contexte et Enjeux, Diagnostic AS-IS, Solution TO-BE, Business Case (ROI 18 mois, +183%), Risques et Mitigation, Planning, Gouvernance, Demande de validation budgétaire.</li>
+                    <li><b>Argumentation financière :</b> Investissement de 185 000€ amorti en 18 mois grâce aux gains de productivité (68h/mois économisées × coût horaire contrôleur) et à la réduction du risque d'erreur de reporting.</li>
+                    <li><b>NPS interne :</b> Indicateur de satisfaction des équipes finance, avec un objectif de passer de 12 à plus de 40 grâce à l'allègement de la charge de consolidation manuelle.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Un investissement de 185 000€ amorti en 18 mois grâce à 68h économisées chaque mois. Sans le Business Case structuré, ce projet restait une bonne idée sans budget pour exister.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- AML PIPELINE -->
+            <article id="aml">
+                <h2 class="major">Pipeline ETL & Monitoring AML</h2>
+                <p class="project-subtitle">Python · SQLite · Pandas · Risk Scoring · Détection d'anomalies financières</p>
+
+                <div class="stack-badges">
+                    <span class="stack-badge">Python 3.10+</span>
+                    <span class="stack-badge">Pandas</span>
+                    <span class="stack-badge">NumPy</span>
+                    <span class="stack-badge">SQLAlchemy</span>
+                    <span class="stack-badge">SQLite</span>
+                    <span class="stack-badge">ETL</span>
+                    <span class="stack-badge">AML</span>
+                    <span class="stack-badge">Risk Scoring</span>
+                    <span class="stack-badge">Git / GitHub</span>
+                </div>
+
+                    <span class="image main"><img src="images/dashboard_aml.png" alt="Dashboard Power BI Monitoring AML — BRF Capital" /></span>
+                      
+                <p style="text-align:center; font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:-1rem;"> Dashboard Power BI connecté à la base SQLite via pipeline ETL Python</p>
+
+                <p><b>Le Challenge :</b> Une institution financière détectait ses anomalies AML (Anti-Money Laundering) manuellement en <b>7 jours</b>. Aucun scoring de risque, aucune traçabilité automatisée, zéro alerte en temps réel. Le risque de non-conformité réglementaire était direct.</p>
+
+                <p><b>La Solution :</b> Conception d'un pipeline ETL de bout en bout couvrant l'ingestion, la transformation, le chargement en base SQLite, le scoring statistique et la génération automatisée d'alertes, orchestré en un seul fichier <code>main.py</code> et exécuté en <b>1,63 seconde</b>.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">10 000</span>
+                        <span class="kpi-label">Transactions analysées</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">1,63 s</span>
+                        <span class="kpi-label">Durée pipeline complet</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value red">105</span>
+                        <span class="kpi-label">Alertes critiques détectées</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">2 094</span>
+                        <span class="kpi-label">Alertes totales générées</span>
+                    </div>
+                </div>
+
+                <h3>1. Architecture ETL Modulaire — 5 modules Python</h3>
+                <ul>
+                    <li><b>extract.py :</b> Ingestion des données depuis fichiers CSV (10 000 transactions) et JSON (100 clients), avec logs horodatés automatiques à chaque étape.</li>
+                    <li><b>transform.py :</b> Nettoyage des doublons, validation des montants, enrichissement avec 5 colonnes calculées : heure, jour, mois, flag nocturne et flag destination à risque.</li>
+                    <li><b>load.py :</b> Insertion en base SQLite via SQLAlchemy, création de 3 tables et 3 vues SQL analytiques : <code>v_transactions_suspectes</code>, <code>v_resume_client</code> et <code>v_transactions_critiques</code>.</li>
+                    <li><b>risk_scoring.py :</b> Score de risque de 0 à 100 par transaction sur 4 critères pondérés. Seuil statistique μ+2σ calculé dynamiquement sur les montants normaux.</li>
+                    <li><b>alerts.py :</b> Filtrage CRITIQUE et ÉLEVÉ, log détaillé, sauvegarde en base et export CSV des 2 094 alertes horodatées avec statut <code>OUVERTE</code>.</li>
+                </ul>
+
+                <h3>2. Modèle de Scoring AML — 4 critères pondérés</h3>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">40 pts</span>
+                        <span class="kpi-label">Montant aberrant (μ+2σ)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">25 pts</span>
+                        <span class="kpi-label">Pays destination à risque</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">20 pts</span>
+                        <span class="kpi-label">Profil client à risque</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value red">15 pts</span>
+                        <span class="kpi-label">Transaction nocturne 22h à 6h</span>
+                    </div>
+                </div>
+
+                <p>Le seuil d'aberration est calculé dynamiquement sur les transactions normales : <b>μ = 2 498 €, σ = 1 433 €, seuil μ+2σ = 5 363 €</b>. Ce choix statistique évite tout seuil fixe arbitraire ; le modèle s'adapte aux données réelles.</p>
+
+                <h3>3. Distribution des Risques</h3>
+
+                <table class="risk-bar-table">
+                    <tr>
+                        <td class="risk-label">🔴 CRITIQUE</td>
+                        <td><div class="risk-bar-wrap"><div class="risk-bar-fill risk-critique" style="width:5%"></div></div></td>
+                        <td class="risk-count">105</td>
+                        <td class="risk-pct">1,1 %</td>
+                    </tr>
+                    <tr>
+                        <td class="risk-label">🟠 ÉLEVÉ</td>
+                        <td><div class="risk-bar-wrap"><div class="risk-bar-fill risk-eleve" style="width:42%"></div></div></td>
+                        <td class="risk-count">1 989</td>
+                        <td class="risk-pct">19,9 %</td>
+                    </tr>
+                    <tr>
+                        <td class="risk-label">🟡 MODÉRÉ</td>
+                        <td><div class="risk-bar-wrap"><div class="risk-bar-fill risk-modere" style="width:65%"></div></div></td>
+                        <td class="risk-count">3 118</td>
+                        <td class="risk-pct">31,2 %</td>
+                    </tr>
+                    <tr>
+                        <td class="risk-label">🟢 FAIBLE</td>
+                        <td><div class="risk-bar-wrap"><div class="risk-bar-fill risk-faible" style="width:100%"></div></div></td>
+                        <td class="risk-count">4 788</td>
+                        <td class="risk-pct">47,9 %</td>
+                    </tr>
+                </table>
+
+                <ul>
+                    <li><b>Alertes CRITIQUES (score ≥ 70) :</b> 105 transactions, montant moyen de <b>50 657 €</b>, destinations majoritaires Panama et Îles Caïmans, score uniforme à 85/100 (3 critères simultanément déclenchés).</li>
+                    <li><b>Alertes ÉLEVÉES (score 40 à 69) :</b> 1 989 transactions, montant moyen de <b>37 515 €</b>, mix de destinations France, Panama et Îles Caïmans.</li>
+                    <li><b>Export automatique :</b> 2 094 alertes en CSV horodaté, prêt à être ingéré dans un outil de case management conformité.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Sans scoring automatisé, chaque analyste passait 7 jours à chercher manuellement ce que le pipeline détecte en 1,63 seconde. Le risque de non-conformité était absorbé en silence, transaction après transaction.
+                </div>
+
+                <h3>4. Code Source — GitHub</h3>
+                <a href="https://github.com/Karl-Wilny/aml-pipeline-etl" target="_blank" class="github-link-box">
+                    <span class="gh-icon">⚙️</span>
+                    <span>
+                        <b>Karl-Wilny / aml-pipeline-etl</b>
+                        <span class="gh-url">github.com/Karl-Wilny/aml-pipeline-etl · 13 fichiers · 14 230 lignes · README complet</span>
+                    </span>
+                </a>
+
+                <ul>
+                    <li><b>Architecture documentée :</b> README professionnel avec schéma d'architecture, résultats chiffrés et instructions d'installation pas à pas.</li>
+                    <li><b>Compatible PostgreSQL :</b> Le moteur SQLAlchemy permet une migration vers PostgreSQL en modifiant uniquement la chaîne de connexion.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Valeur Ajoutée :</strong> Les critères de détection sont alignés sur les recommandations FATF/GAFI et la directive AMLD6. Le code est sur GitHub, documenté et prêt à tourner en production.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- FINANCE -->
+            <article id="finance">
+                <h2 class="major">Finance Stratégique</h2>
+                <p class="project-subtitle">Asset Management & Corporate Finance · Modélisation Excel</p>
+
+                <h3>Projet 1 : Gestion d'Actifs & Marchés Européens</h3>
+                <span class="image main"><img src="images/finance_benchmark.png" alt="Comparatif Performance vs Marché" /></span>
+
+                <p><b>Le Challenge :</b> Construire un portefeuille "High Conviction" d'actions européennes optimisé selon le couple Rendement/Risque, en surperformant le benchmark de référence.</p>
+                <p><b>Ma Solution :</b> Application rigoureuse de la théorie de Markowitz couplée à une stratégie de rendement par le dividende (Yield Investing).</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value green">3,22 %</span>
+                        <span class="kpi-label">Rendement dividende (portefeuille)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">2,50 %</span>
+                        <span class="kpi-label">Rendement dividende (benchmark)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">+72 bps</span>
+                        <span class="kpi-label">Surperformance dividende</span>
+                    </div>
+                </div>
+
+                <span class="image main"><img src="images/finance_frontiere.JPG" alt="Répartition Sectorielle et Frontière Efficiente" /></span>
+                <ul>
+                    <li><b>Théorie de Markowitz :</b> Construction de la frontière efficiente pour identifier l'allocation maximisant le rendement espéré à un niveau de risque donné. Chaque titre a été évalué non pas isolément, mais pour sa contribution à la diversification du portefeuille global.</li>
+                    <li><b>Surperformance :</b> Un rendement dividende de <b>3,22%</b> contre <b>2,50%</b> pour le benchmark (+72 points de base) assure des flux de trésorerie supérieurs, réduisant la dépendance aux plus-values latentes pour générer du rendement.</li>
+                    <li><b>Stratégie Yield :</b> Sélection délibérée de leaders sectoriels à dividendes stables, approche défensive qui protège le portefeuille en période de volatilité tout en assurant un revenu récurrent.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Insight :</strong> Surperformer un benchmark de <strong>72 points de base sur le dividende seul</strong> est significatif ; c'est un avantage composé qui s'amplifie dans le temps via le réinvestissement des dividendes (effet boule de neige).
+                </div>
+
+                <hr class="section-divider" />
+
+                <h3>Projet 2 : Financement Aéronautique (Airbus A320)</h3>
+                <span class="image main"><img src="images/projet_finance.png" alt="Graphique Rentabilité VAN" /></span>
+
+                <p><b>Le Challenge :</b> Structurer le financement d'un investissement de <b>75 M€</b> (acquisition d'un Airbus A320) et valider sa rentabilité économique avant engagement.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">75 M€</span>
+                        <span class="kpi-label">Investissement total</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">21,9 M€</span>
+                        <span class="kpi-label">VAN validée</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">23,74 %</span>
+                        <span class="kpi-label">TRI du projet</span>
+                    </div>
+                </div>
+
+                <span class="image main"><img src="images/projet_finance1.png" alt="Structure du Financement Dette/Equity" /></span>
+                <ul>
+                    <li><b>Modélisation des Cash Flows :</b> Projection sur 5 ans intégrant les revenus locatifs, les charges de maintenance, l'amortissement de l'appareil et le service de la dette. La VAN positive de <b>21,9 M€</b> valide la création de valeur réelle de l'opération.</li>
+                    <li><b>TRI à 23,74% :</b> Ce taux de rentabilité interne dépasse largement le coût du capital de référence du secteur aéronautique ; l'investissement crée de la valeur bien au-delà du coût de son financement.</li>
+                    <li><b>Ingénierie financière :</b> Structuration optimisée Dette/Equity pour maximiser l'effet de levier financier, réduire le coût moyen pondéré du capital (WACC) et améliorer le retour sur fonds propres (ROE).</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> Un TRI de <strong>23,74%</strong> sur un actif de 75 M€ dans le secteur aéronautique est une performance robuste. La structuration Dette/Equity a permis de démontrer qu'une optimisation du levier financier améliore le ROE sans détériorer la solvabilité de l'opération.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- AZURE -->
+            <article id="azure">
+                <h2 class="major">Cloud Azure & FinOps</h2>
+                <p class="project-subtitle">Infrastructure IaaS · Microsoft Azure</p>
+
+                <span class="image main"><img src="images/projet_azure_sousnet.JPG" alt="Infrastructure Réseau Azure US/Europe" /></span>
+
+                <p><b>Le Challenge :</b> Déployer une infrastructure Cloud sécurisée, multi-régionale et redondante, tout en maîtrisant les coûts opérationnels (OPEX) dans une logique FinOps.</p>
+                <p><b>Ma Solution :</b> Architecture IaaS complète sous <b>Microsoft Azure</b>, de la conception réseau au monitoring budgétaire.</p>
+
+                <h3>1. Architecture & Connectivité Internationale</h3>
+                <span class="image main"><img src="images/projet_azure_con.JPG" alt="Connexion Inter-VMs" /></span>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">Multi-régions</span>
+                        <span class="kpi-label">Peering US / Europe</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">Validés</span>
+                        <span class="kpi-label">Flux sécurisés inter-VMs</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">Segmenté</span>
+                        <span class="kpi-label">Sous-réseaux public / privé</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><b>Réseau (VNet) :</b> Segmentation en sous-réseaux publics et privés avec des règles NSG (Network Security Groups) strictes ; seuls les flux nécessaires sont autorisés, réduisant la surface d'attaque au minimum.</li>
+                    <li><b>Peering International :</b> Interconnexion des réseaux virtuels US et Europe via Azure VNet Peering, garantissant une latence maîtrisée et une continuité de service en cas de défaillance régionale.</li>
+                    <li><b>Validation opérationnelle :</b> Tests de connectivité end-to-end (ping, SSH via Azure Bastion) confirmant l'intégrité des flux entre toutes les VMs ; aucun flux non autorisé n'est passé lors des tests.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Insight Sécurité :</strong> L'utilisation d'<strong>Azure Bastion</strong> comme point d'accès SSH centralisé élimine la nécessité d'exposer les IPs publiques des VMs, décision d'architecture qui réduit drastiquement le risque d'intrusion sans complexifier l'administration.
+                </div>
+
+                <h3>2. Analyse FinOps & Optimisation des Coûts</h3>
+                <span class="image main"><img src="images/projet_azure_pie.JPG" alt="Répartition des coûts Azure" /></span>
+                <ul>
+                    <li><b>Répartition par ressource :</b> Analyse de la consommation par type (Compute vs Storage vs Network). La visualisation révèle immédiatement les postes de dépense dominants, première étape indispensable avant toute action d'optimisation.</li>
+                </ul>
+
+                <span class="image main"><img src="images/projet_azure_couts.JPG" alt="Tableau détaillé des coûts" /></span>
+                <ul>
+                    <li><b>Rightsizing :</b> Monitoring via Azure Cost Management permettant d'identifier les ressources surdimensionnées par rapport à leur usage réel. Un VM dimensionné pour 100% de charge qui tourne à 20% est un gaspillage budgétaire direct.</li>
+                    <li><b>Gouvernance budgétaire :</b> Mise en place d'alertes de dérive ; toute consommation dépassant le seuil défini déclenche une notification avant que le dépassement ne soit constaté en fin de mois.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact Business :</strong> L'approche FinOps transforme la gestion Cloud d'une logique de coût subi en levier de performance piloté. Chaque euro de Cloud dépensé est justifié par un usage mesurable ; c'est la condition pour qu'un DSI puisse défendre son budget OPEX devant un CFO.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- TECH FULLSTACK -->
+            <article id="tech">
+                <h2 class="major">Tech Fullstack</h2>
+                <p class="project-subtitle">Application de Réservation Ferroviaire · React.js / Node.js / MySQL</p>
+
+                <span class="image main">
+                    <video width="100%" height="auto" controls autoplay loop muted playsinline style="border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                        <source src="images/demo_train.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </span>
+
+                <p><b>Le Challenge :</b> Digitaliser le processus de réservation ferroviaire via une interface intuitive, sécurisée et scalable, en remplaçant un processus manuel sujet aux erreurs et aux doublons de réservation.</p>
+                <p><b>Ma Solution :</b> Développement d'une application web fullstack (React.js / Node.js) pilotée en méthodologie <b>Agile / Scrum</b>.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">React.js</span>
+                        <span class="kpi-label">Frontend · SPA dynamique</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value green">Node.js</span>
+                        <span class="kpi-label">Backend · API REST</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">MySQL</span>
+                        <span class="kpi-label">BDD relationnelle normalisée</span>
+                    </div>
+                </div>
+
+                <h3>1. UI/UX Design</h3>
+                <span class="image main"><img src="images/projet_web.JPG" alt="Maquette et Interface Site Web" /></span>
+                <ul>
+                    <li><b>Frontend React.js :</b> Interface responsive permettant la recherche de trajets, la sélection de sièges et la confirmation de réservation en temps réel, sans rechargement de page grâce à l'architecture SPA (Single Page Application).</li>
+                    <li><b>Pilotage Agile :</b> Développement par sprints avec backlog priorisé sous Jira. Cette méthode a permis de livrer des fonctionnalités testables à chaque itération, en intégrant les retours utilisateurs rapidement.</li>
+                </ul>
+
+                <h3>2. Architecture de Données</h3>
+                <span class="image main"><img src="images/projet_web_db.JPG" alt="Schéma Base de Données Relationnel" /></span>
+                <ul>
+                    <li><b>Modèle Conceptuel de Données (MCD) :</b> Conception d'un schéma relationnel normalisé garantissant l'intégrité référentielle des transactions complexes ; un utilisateur ne peut pas réserver un siège déjà occupé, et toute annulation libère correctement la disponibilité.</li>
+                    <li><b>API REST (Node.js) :</b> Architecture en couches séparant clairement la logique métier, les routes API et l'accès aux données ; structure maintenable et extensible, prête à accueillir de nouvelles fonctionnalités (paiement, programme de fidélité) sans refonte.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Valeur Ajoutée :</strong> Ce projet démontre la capacité à mener un cycle complet de développement, de la maquette UX au déploiement en base de données, en autonomie et en équipe. Une compétence clé pour un profil Finance/SI qui permet de dialoguer d'égal à égal avec les équipes techniques lors de projets de transformation digitale.
+                </div>
+
+                <ul class="actions back-btn">
+                    <li><a href="#work" class="button icon solid fa-arrow-left">Retour au menu</a></li>
+                </ul>
+            </article>
+
+            <!-- COMPÉTENCES -->
+            <article id="about">
+                <h2 class="major">Mon Expertise</h2>
+
+                <p><b>Ma Valeur Ajoutée :</b> Une double compétence rare alliant la rigueur de l'<b>Ingénierie Financière</b> à la puissance des <b>Systèmes d'Information</b>. Je conçois les outils techniques qui permettent de piloter la stratégie financière et je maîtrise les deux langages : celui du DAF et celui du DSI.</p>
+
+                <h3 class="major"><span class="icon solid fa-chart-line"></span> Finance & Business Intelligence</h3>
+                <p>Transformer la donnée brute en levier de performance économique.</p>
+                <ul class="alt">
+                    <li><b>Corporate Finance :</b> Modélisation financière complexe (Business Plan, Cash Flows sur 5 ans), analyse de rentabilité (VAN, TRI, Payback) et structuration de Haut de Bilan (Dette/Equity, effet de levier, WACC/ROE).</li>
+                    <li><b>Finance de Marché :</b> Gestion d'actifs (Asset Management), construction et optimisation de portefeuille (Markowitz/CAPM, frontière efficiente), stratégie dividende (Yield Investing) et analyse de risques.</li>
+                    <li><b>Business Intelligence :</b> Maîtrise complète de la chaîne de valeur Data : ETL (Power Query / Python), modélisation (Star Schema, tables Calendrier DAX), mesures avancées (ROAS dynamique, ISFILTERED, BLANK) et visualisation (Power BI Desktop).</li>
+                    <li><b>Analyse Opérationnelle :</b> Construction de tableaux de bord interactifs sous Excel (Power Pivot, slicers), corrélation de flux de ventes et de performance logistique, identification de zones de friction et recommandations actionnables à la direction.</li>
+                    <li><b>Conformité & AML :</b> Conception de pipelines de détection d'anomalies financières (Anti-Money Laundering), scoring de risque statistique (μ+2σ), génération d'alertes automatisées, alignement FATF/GAFI et AMLD6.</li>
+                </ul>
+
+                <h3 class="major"><span class="icon solid fa-server"></span> Cloud & Ingénierie IT</h3>
+                <p>Déployer des infrastructures résilientes, sécurisées et optimisées.</p>
+                <ul class="alt">
+                    <li><b>Cloud Computing (Azure) :</b> Architecture IaaS/PaaS, gestion des réseaux virtuels (VNet, Peering multi-régional US/Europe), sécurité (NSG, Azure Bastion, IAM) et haute disponibilité.</li>
+                    <li><b>FinOps & Cloud Cost Management :</b> Pilotage et optimisation des coûts Cloud (OPEX), dimensionnement des ressources (Rightsizing), gouvernance budgétaire et alertes de dérive via Azure Cost Management.</li>
+                    <li><b>Data Engineering :</b> Pipelines ETL Python (Pandas, SQLAlchemy), bases de données relationnelles (SQLite / PostgreSQL / MySQL), architecture modulaire et gestion de versions (Git/GitHub).</li>
+                    <li><b>Développement Fullstack :</b> Conception d'applications Web modernes (React.js SPA, Node.js API REST), design de bases de données relationnelles normalisées (MySQL, MCD).</li>
+                </ul>
+
+                <h3 class="major"><span class="icon solid fa-toolbox"></span> Ma Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tag">Excel (Power Pivot)</span>
+                    <span class="tag">Power BI Desktop</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Power Query (ETL)</span>
+                    <span class="tag">Python (Pandas)</span>
+                    <br>
+                    <span class="tag">SQL / SQLite / MySQL</span>
+                    <span class="tag">SQLAlchemy</span>
+                    <span class="tag">Microsoft Azure</span>
+                    <span class="tag">FinOps</span>
+                    <span class="tag">AML / Risk Scoring</span>
+                    <br>
+                    <span class="tag">React.js</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Git / GitHub</span>
+                    <span class="tag">Jira (Agile/Scrum)</span>
+                    <span class="tag">Gantt Project</span>
+                    <span class="tag">GMAO (Coswin)</span>
+                </div>
+
+                <hr />
+
+                <h3><span class="icon solid fa-users"></span> Soft Skills & Méthodologie</h3>
+                <ul>
+                    <li><b>Gestion de Projet & Méthodes :</b> Pilotage hybride adapté au contexte : <b>Agile / Scrum</b> pour les projets IT (itérations courtes, livraisons fréquentes) et <b>Cycle en V</b> pour les projets industriels/financiers (jalons stricts, validation formelle).</li>
+                    <li><b>Savoir-Être :</b>
+                        <br>• <b>Rigueur Analytique :</b> Fiabilité absolue dans le traitement des chiffres et des modèles ; zéro approximation sur les KPIs présentés à la direction.
+                        <br>• <b>Pédagogie "Bridge" :</b> Capacité à traduire les enjeux techniques en langage métier (DAF, COO) et inversement ; atout clé en MOA et en consulting SI.
+                        <br>• <b>Adaptabilité :</b> Curiosité technique et apprentissage continu ; capable de monter en compétence rapidement sur un nouvel outil ou un nouveau secteur.
+                    </li>
+                    <li><b>Langues :</b> Anglais (Pratique Professionnelle : Lecture, Rédaction, Présentation), Français (Langue maternelle).</li>
+                </ul>
+
+                <ul class="actions back-btn">
+                    <li><a href="#intro" class="button icon solid fa-arrow-left">Retour au profil</a></li>
+                </ul>
+            </article>
+
+            <!-- CONTACT -->
             <article id="contact">
                 <h2 class="major">Me Contacter</h2>
                 <p>Mon profil vous intéresse ? N'hésitez pas à me contacter pour échanger sur une opportunité de stage ou pour discuter de mes projets.</p>
-                
+
                 <ul class="icons">
                     <li><a href="http://linkedin.com/in/karl-koumba" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://karl-wilny.github.io/KOUMBA-MOUANDA.github.io/" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://github.com/Karl-Wilny" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                     <li><a href="mailto:Ka.koumba_mouanda@epmistes.net" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
 
@@ -195,7 +1062,7 @@
         </div>
 
         <footer id="footer">
-            <p class="copyright">&copy; 2025 Karl Wilny KOUMBA MOUANDA. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+            <p class="copyright">&copy; 2026 Karl Wilny KOUMBA MOUANDA. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
         </footer>
 
     </div>
