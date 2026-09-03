@@ -334,7 +334,7 @@
                     <li>
                         <a href="#moa" class="button fit">
                             <span class="menu-icon">🏦</span>
-                            <span><b>Transformation SI — MOA Bancaire</b><br><small>Pilotage budgétaire BRF Capital, migration Excel vers Power BI, gestion de projet bout en bout</small></span>
+                            <span><b>MOA & Gestion de Projet</b><br><small>Transformation SI BRF Capital · Système de présence anti-fraude GPS · Product Owner terrain</small></span>
                         </a>
                     </li>
                     <li>
@@ -543,9 +543,12 @@
                 </ul>
             </article>
 
-            <!-- MOA BRF CAPITAL -->
+            <!-- MOA BRF CAPITAL + STANDINFO -->
             <article id="moa">
-                <h2 class="major">Transformation SI — MOA Bancaire</h2>
+                <h2 class="major">MOA & Gestion de Projet</h2>
+                <p class="project-subtitle">Pilotage fonctionnel · Recueil de besoin · Arbitrages produit · Terrain & Corporate</p>
+
+                <h3>Projet 1 : Transformation SI — MOA Bancaire</h3>
                 <p class="project-subtitle">BRF Capital · 850 M€ de budget · Migration Excel vers Power BI · Pilotage bout en bout</p>
 
                 <span class="image main"><img src="images/brf_schema_astobe.JPG" alt="Schéma AS-IS TO-BE Transformation SI BRF Capital" /></span>
@@ -629,6 +632,72 @@
 
                 <div class="insight-box">
                     <strong>Impact Business :</strong> Un investissement de 185 000€ amorti en 18 mois grâce à 68h économisées chaque mois. Sans le Business Case structuré, ce projet restait une bonne idée sans budget pour exister.
+                </div>
+
+                <hr class="section-divider" />
+
+                <h3>Projet 2 : Système de Présence Anti-Fraude GPS — Stand Info</h3>
+                <p class="project-subtitle">MOA & Product Owner · Google Sheets / Apps Script · Low-Code · Géolocalisation · En production</p>
+
+                <!-- Architecture -->
+                <span class="image main"><img src="images/architecture_standinfo.png" alt="Architecture du système de présence Stand Info" /></span>
+
+                <p><b>Le Challenge :</b> Une association gérant un stand d'information peinait à suivre les présences d'une trentaine de bénévoles. Le système existant feuilles papier puis tableau Looker Studio bricolé ne permettait ni suivi individuel jour par jour, ni protection contre les pointages frauduleux à distance, et contenait des données corrompues par des années de ressaisie manuelle.</p>
+
+                <p><b>Ma Mission (rôle MOA / Product Owner) :</b> Piloter le projet de bout en bout recueil de besoin, arbitrages fonctionnels, tests, gestion d'incidents et documentation en m'appuyant sur un pipeline low-code (Google Sheets, Apps Script) et un développement assisté par IA pour l'implémentation technique.</p>
+
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-value red">36 %</span>
+                        <span class="kpi-label">Doublons détectés & corrigés (1 651 / 4 563 lignes)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value gold">300 m</span>
+                        <span class="kpi-label">Rayon GPS anti-fraude (Haversine)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value accent">12 pages</span>
+                        <span class="kpi-label">Documentation de passation livrée</span>
+                    </div>
+                </div>
+
+                <!-- Avant / Après -->
+                <span class="image main"><img src="images/StandInfo_avant_apres.png" alt="Avant / Après — Looker Studio vs Registre autonome connecté en direct" /></span>
+
+                <h3>1. Audit & Fiabilisation de la Donnée</h3>
+                <ul>
+                    <li><b>Diagnostic :</b> Identification de <b>1 651 lignes dupliquées</b> (36% du volume total) et d'incohérences de saisie (noms tronqués, doublons de fiches membres) faussant l'ensemble des indicateurs de présence.</li>
+                    <li><b>Correction sans perte :</b> Nettoyage et restructuration du référentiel avec vérification systématique avant application aucune suppression à l'aveugle, historique intégralement conservé.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Insight :</strong> 36% de doublons sur un dataset de 4 563 lignes, c'est un tiers des décisions de présence faussées. Avant cet audit, le système indiquait des taux d'assiduité erronés depuis des années sans que personne ne s'en aperçoive.
+                </div>
+
+                <h3>2. Cadrage Fonctionnel Itératif</h3>
+                <ul>
+                    <li><b>Règles métier complexes :</b> Traduction de contraintes réelles en logique de calcul exploitable alternance d'équipes le vendredi, horaires décalés le dimanche, tolérance de retard configurable, gestion des pauses temporaires vs suppressions définitives. Chaque règle ajustée sur plusieurs cycles de validation avec le commanditaire.</li>
+                    <li><b>Arbitrages produit :</b> Décision et justification de choix structurants pondération Présent/Retard dans le taux de présence, traitement différencié pause vs suppression définitive d'un membre, gestion des exclusions de dates.</li>
+                </ul>
+
+                <h3>3. Sécurisation par Géolocalisation</h3>
+                <ul>
+                    <li><b>Anti-fraude GPS :</b> Conception d'une vérification de position basée sur la <b>formule de Haversine</b> tout pointage effectué à plus de 300m du stand est automatiquement rejeté, avec double contrôle client et serveur (Apps Script).</li>
+                    <li><b>Expérience utilisateur :</b> Parcours de pointage réduit à 3 actions (scan QR code → sélection du nom → autorisation de position), pensé pour une équipe entièrement non-technique.</li>
+                    <li><b>Mode de test :</b> Environnement dédié permettant la validation complète du système sans déplacement physique indispensable pour les cycles de recette à distance.</li>
+                </ul>
+
+                <h3>4. Industrialisation & Documentation</h3>
+                <!-- Récap individuel -->
+                <span class="image main"><img src="images/Récap_individuel.PNG" alt="Récapitulatif individuel de présence — Stand Info en production" /></span>
+                <ul>
+                    <li><b>Architecture résiliente :</b> Séparation stricte des données brutes et des données calculées après plusieurs incidents de production aucun script ne peut jamais corrompre les données sources, quelles que soient les manipulations en amont.</li>
+                    <li><b>Livrable final :</b> Registre autonome connecté en direct affichant taux individuel, taux tandem, historique jour par jour avec statut (Présent / Retard / Absent) et récapitulatif PDF exportable par bénévole.</li>
+                    <li><b>Passation :</b> Documentation technique de <b>12 pages</b> couvrant l'architecture complète, les procédures d'administration, les incidents résolus et les limites connues permettant une reprise autonome du projet sans intervention extérieure.</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>Impact :</strong> Un outil utilisé <strong>quotidiennement en production</strong> par une équipe non-technique, avec une donnée fiabilisée à 100% et un historique de présence entièrement audité sans budget ni infrastructure payante. C'est le seul projet du portfolio où de vrais utilisateurs dépendent du système chaque semaine.
                 </div>
 
                 <ul class="actions back-btn">
